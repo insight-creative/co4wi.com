@@ -1,0 +1,9 @@
+{
+    "routes": [
+        {
+        "from": "/(.*)",
+        "status": 302,
+        "to": "https://ecpwi.com/properties/co4/$1"
+        }
+    ]
+}
