@@ -1,0 +1,92 @@
+.home-hero,
+.hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  border-bottom: 5px solid $primary-color;
+  background-color: $white;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba($white, 0.7);
+  }
+
+  &__content {
+    h2 {
+      max-width: 650px;
+    }
+  }
+
+  &__button {
+    margin-top: $ic-300;
+  }
+}
+
+.home-hero {
+  height: 80vh;
+
+  &__overlay {
+    background-color: rgba($white, 0.5);
+  }
+
+  &__content {
+    margin-top: $ic-500;
+
+    @include breakpoint(md) {
+      margin-top: 90px;
+
+      h1 {
+        max-width: 32ch;
+      }
+    }
+
+    h1 {
+      font-size: clamp($ic-200, 4vw, $ic-700);
+    }
+
+    h2 {
+      font-size: clamp($ic-200, 4vw, $ic-400);
+      margin: $ic-300 auto;
+      max-width: 32ch;
+    }
+
+    p {
+      max-width: 500px;
+      font-size: clamp($ic-100, 4vw, $ic-200);
+    }
+
+    .subscribe {
+      max-width: 400px;
+      margin: $ic-300 auto;
+    }
+
+    h1,
+    p {
+      margin: 0 auto;
+    }
+  }
+}
+
+.hero {
+  height: 40vh;
+
+  @include breakpoint(sm) {
+    min-height: 400px;
+  }
+
+  &__content {
+    padding-bottom: 5%;
+  }
+}

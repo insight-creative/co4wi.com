@@ -1,0 +1,89 @@
+.contact-hero {
+  .hero__image img {
+    object-position: top;
+  }
+}
+
+.contact {
+  .w-60-m + .w-40-m {
+    margin-top: $ic-400;
+
+    @include breakpoint(md) {
+      margin-top: 0;
+      margin-left: $ic-400;
+    }
+  }
+}
+
+.contact-content {
+  margin-bottom: $ic-1000;
+}
+
+.contact-form {
+  background-color: $white;
+
+  &__wrapper {
+    padding: $ic-200;
+
+    @include breakpoint(lg) {
+      padding: $ic-300 $ic-600;
+    }
+
+    @include breakpoint(xl) {
+      padding: $ic-600;
+    }
+  }
+
+  &__netlify-bot-field {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    margin: 0;
+  }
+
+  &__row-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+
+      .contact-form__form-group {
+        flex: 50%;
+      }
+
+      .contact-form__form-group:nth-of-type(2) {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  &__form-group label {
+    font-weight: 700;
+    color: $primary-color;
+  }
+
+  .contact-form__form-group input,
+  .contact-form__form-group textarea,
+  .contact-form__form-group select {
+    background-color: $light-gray;
+    width: 100%;
+    padding: $ic-100 $ic-200;
+    margin-bottom: $ic-100;
+    border: none;
+    height: $ic-700;
+    border-radius: $radius;
+
+    &:focus {
+      outline: 1px solid $primary-color;
+    }
+  }
+
+  .contact-form__form-group textarea {
+    height: auto;
+  }
+
+  &__btn {
+    border: none;
+  }
+}

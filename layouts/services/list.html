@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ partial "hero" . }}
+{{ partial "breadcrumbs" . }}
+{{ partial "intro" . }}
+{{ partialCached "services" . }}
+{{ partialCached "services-cta" . }}
+{{ end }}

@@ -1,0 +1,14 @@
+.testimonial {
+  background-color: $light-gray;
+  border-top: 5px solid $primary-color;
+  margin: 0 auto $ic-200;
+  padding: $ic-200;
+  max-width: 60ch;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    margin-bottom: -50px;
+    fill: $primary-color;
+  }
+}

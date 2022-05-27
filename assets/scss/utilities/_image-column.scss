@@ -1,0 +1,16 @@
+.image-column {
+  position: relative;
+  order: 1;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  @include breakpoint(md) {
+    position: absolute;
+    left: 0;
+    height: 100%;
+  }
+}

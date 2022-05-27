@@ -1,0 +1,27 @@
+.add-on {
+  position: relative;
+  text-decoration: none;
+
+  &__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+
+    img {
+      position: absolute;
+      transition: 0.3s ease;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text-overlay {
+    background-color: $primary-color;
+    color: $white;
+    padding: $ic-300;
+    height: 100%;
+    position: relative;
+    top: -2px;
+  }
+}

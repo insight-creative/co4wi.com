@@ -1,0 +1,17 @@
+.sidebar-cta {
+  padding: $ic-200;
+  background-color: $light-gray;
+  background-image: url("/uploads/coj-logomark-watermark.svg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+
+  &__inner {
+    border: 1px solid $white;
+    padding: $ic-200;
+  }
+
+  .social {
+    margin-top: $ic-300;
+  }
+}

@@ -1,0 +1,70 @@
+.share {
+  margin-top: $ic-100;
+
+  p {
+    line-height: 1;
+  }
+}
+
+.share-this {
+  display: flex;
+  align-items: center;
+  margin-top: $ic-400;
+}
+
+.share-buttons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__list-items {
+    margin-top: 0;
+  }
+
+  &__icon-wrapper {
+    height: 20px;
+    width: 20px;
+    display: grid;
+    place-items: center;
+  }
+
+  &__link {
+    padding: 0 0.5rem;
+    display: block;
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: $secondary-color;
+      }
+    }
+  }
+
+  svg {
+    height: 16px;
+    width: 100%;
+    fill: $white;
+    transition: 0.3s ease-out;
+  }
+}
+
+.share-buttons__list-items:first-of-type {
+  svg {
+    margin-top: -2px;
+  }
+}
+
+ul.share-buttons li {
+  display: inline;
+}
+
+ul.share-buttons .sr-only {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}

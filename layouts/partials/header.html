@@ -1,0 +1,100 @@
+{{ "<!-- Header -->" | safeHTML }}
+<a class="screen-reader-skip-to-content" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="screen-reader-skip-to-content" href="#footer" tabindex="0">Skip to footer content</a>
+<header class="site-header">
+  <div class="site-header__wrapper wrapper-lg">
+    <nav class="site-header__nav site-header__col" aria-label="primary navigation">
+      <div class="site-header__primary">
+        <ul class="nav-list flex-justify-start flex-center">
+          {{ $url := .RelPermalink }}
+          {{ range .Site.Menus.main }}
+          
+          {{ $active := eq $url .URL }}
+            {{ if .HasChildren }}
+                <li class="nav-list__item has-sub-menu">
+                  <a {{ if $active }}class="current nav-list__link" {{ else }} class="nav-list__link" {{ end }} href="{{ .URL }}" aria-label="{{ .Name }}">{{ .Name }}</a>
+                  <span class="sub-menu-indicator">{{ partialCached "svg-icons/chevron-down.svg" . }}</span>
+                  <div class="nav-list__sub-menu sub-menu">
+                    <ul class="sub-menu__inner">
+                      {{ range .Children }}
+                        <li class="sub-menu__item">
+                            <a class="sub-menu__link" href="{{ .URL }}" aria-label="{{ .Name | markdownify }}">{{ .Name | markdownify }}</a>
+                        </li>
+                      {{ end }}
+                    </ul>
+                  </div>
+                </li>
+            {{ else }}
+            <li class="nav-list__item">
+              <a {{if $active }}class="current nav-list__link" {{ else }} class="nav-list__link" {{ end }} href="{{ .URL }}" aria-label="{{ .Name | markdownify }}">
+                  {{ .Name | markdownify }}
+              </a>
+            </li>
+            {{ end }}    
+          {{ end }}
+        </ul>
+      </div>
+    </nav>
+    <div class="site-header__logo">
+      <a class="brand-logo" href="{{ site.BaseURL }}">
+        {{ if .Site.Data.site_settings.logo }}
+          <img src="/uploads/{{ .Site.Data.site_settings.logo }}" alt="{{ .Site.Data.site_settings.business_name }} logo" width="200" height="100" class="dim">
+        {{ else }}
+          <h1>{{ site.Title }}</h1>
+        {{ end }}
+      </a>
+    </div>
+    <div class="site-header__secondary site-header__col">
+      <ul class="nav-list flex-justify-end flex-center">
+        <!-- <li class="nav-list__item">
+          <a class="nav-list__link" href="#" aria-label="#">
+              Member Login
+          </a>
+        </li> -->
+        <li class="nav-list__item">
+          <a class="btn btn-secondary" href="tel:{{ .Site.Data.site_settings.phone }}" aria-label="#">
+            {{ .Site.Data.site_settings.phone }} {{ partialCached "svg-icons/mobile.svg" . }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="site-header__mobile-nav">
+      <div class="site-header__mobile-nav-inner">
+        <ul class="site-header__mobile-nav-menu">
+          {{ range .Site.Menus.main }}
+          {{ if .HasChildren }}
+            <li class="nav-list-item nav-list-has-dropdown">
+              <a class="nav-item parent" href="{{ .URL }}" aria-label="{{ .Name | markdownify }}" aria-haspopup="true" aria-expanded="false"
+                title="{{ .Name | markdownify }}">{{ .Name | markdownify }}
+              </a>
+              <button class="toggle-mobile-dropdown" aria-label="open mobile dropdown menu"></button>
+                <ul class="nav-list-dropdown">
+                  {{ range .Children }}
+                  <li class="nav-list-item">
+                    <a class="nav-item" href="{{ .URL }}" aria-label="{{ .Name | markdownify }}"
+                title="{{ .Name | markdownify }}">{{ .Name | markdownify }}</a>
+                  </li>
+                  {{ end }}
+                </ul>
+            </li>
+            {{ else }}
+          <li class="nav-list-item">
+            <a href="{{ .URL }}" class="nav-item" aria-label="{{ .Name }}" title="{{ .Name }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+          {{ end }}
+          <!-- <li class="nav-list-item">
+            <a class="nav-item" href="#" aria-label="#">
+                Member Login
+            </a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <button class="site-header__col flex-justify-end hamburger hamburger--slider" type="button" aria-label="open mobile menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+</header>

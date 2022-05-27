@@ -1,0 +1,31 @@
+.staff-cards {
+  display: grid;
+  gap: $ic-100;
+  
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.staff-card {
+  position: relative;
+  flex: 1;
+
+  img {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+  }
+
+  &__content {
+    border: 1px solid rgba($black, 0.3);
+    border-top: none;
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+    padding: $ic-200;
+    flex: 1;
+  }
+
+  &__body {
+    font-size: $ic-100;
+  }
+}

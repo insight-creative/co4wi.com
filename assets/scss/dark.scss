@@ -1,0 +1,115 @@
+@import "globals/variables";
+
+body {
+  background-color: $black;
+  color: $light-gray;
+}
+
+.site-header,
+.home-hero,
+.hero {
+  border-bottom: 5px solid $primary-color-3;
+}
+
+.site-header,
+.nav-list,
+.site-header__mobile-nav,
+.contact-form {
+  background-color: $black;
+}
+
+.site-header .sub-menu {
+  background-color: $black-2;
+}
+
+.site-header .nav-list__link {
+  color: $light-gray;
+
+  &:hover, 
+  &:focus {
+    color: $secondary-color;
+  }
+}
+
+.site-header .sub-menu-indicator svg {
+  fill: $light-gray;
+}
+
+.hamburger-inner,
+.hamburger-inner:before,
+.hamburger-inner:after {
+  background-color: $light-gray;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner:before,
+.hamburger.is-active .hamburger-inner:after {
+  background-color: $light-gray;
+}
+
+.home-hero__overlay, .hero__overlay {
+  background-color: rgba($black,.5);
+}
+
+.subscribe #email, .subscribe #email_2 {
+  background-color: $black;
+}
+
+.text-primary,
+a:not(.btn),
+.contact-form__form-group label {
+  color: $light-gray !important;
+}
+
+.bg-accent-block,
+.bg-gray {
+  background-color: $black-2;
+}
+
+.footer {
+  background-color: $black;
+}
+
+.breadcrumbs {
+  color: $light-gray;
+}
+
+.breadcrumbs svg {
+  stroke: $light-gray;
+}
+
+.service-card {
+  border-top: 1px solid $black-2;
+  border-right: 1px solid $black-2;
+  border-left: 1px solid $black-2;
+}
+
+.staff-card__content {
+  border: 1px solid $black-2;
+}
+
+.contact-form__form-group input,
+.contact-form__form-group textarea,
+.contact-form__form-group select {
+  background-color: $black-2 !important;
+}
+
+.btn-primary {
+  background-image: linear-gradient(
+    to right,
+    $primary-color 0%,
+    $primary-color-3 15%,
+    $primary-color-3 85%,
+    $primary-color 100%
+  );
+
+  &:hover,
+  &:focus {
+    color: $white;
+    box-shadow: 0 10px 20px 0 rgba($primary-color, 0.5);
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $primary-color-3 !important;
+}

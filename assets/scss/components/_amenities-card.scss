@@ -1,0 +1,46 @@
+.amenities-grid {
+  display: grid;
+  gap: $ic-200;
+  margin-top: $ic-600;
+  padding: 0;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  // @include breakpoint(sm) {
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
+
+  // @include breakpoint(md) {
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
+
+  // @include breakpoint(lg) {
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
+}
+
+.amenities-card {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: $ic-200;
+  padding: $ic-900 $ic-200 $ic-600 $ic-200;
+  border-radius: $radius;
+  position: relative;
+  text-align: center;
+  font-size: $ic-100;
+
+  &__icon {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    left: 50%;
+    width: $ic-900;
+    height: $ic-900;
+    transform: translateX(-50%);
+    border-radius: $radius;
+    color: $secondary-color;
+    display: grid;
+    place-items: center;
+    margin-bottom: $ic-100;
+  }
+}

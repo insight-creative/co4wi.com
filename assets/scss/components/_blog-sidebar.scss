@@ -1,0 +1,19 @@
+.blog-sidebar {
+  @include breakpoint(md) {
+    margin-left: $ic-200;
+  }
+
+  &__categories-list {
+    padding: 0;
+  }
+
+  &__categories-list-item {
+    list-style-type: none;
+  }
+
+  &__categories-link {
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+}

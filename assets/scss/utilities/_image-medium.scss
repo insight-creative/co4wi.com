@@ -1,0 +1,7 @@
+.image-medium {
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 50%;
+  }
+}

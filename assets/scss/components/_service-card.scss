@@ -1,0 +1,111 @@
+.service-card {
+  position: relative;
+  text-decoration: none;
+  border-top: 1px solid rgba($black, 0.3);
+  border-right: 1px solid rgba($black, 0.3);
+  border-left: 1px solid rgba($black, 0.3);
+  border-radius: $radius;
+  // opacity: 0;
+  // transform: translateY(50px);
+
+  &__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+
+    img {
+      position: absolute;
+      transition: 0.3s ease-out;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-top-right-radius: $radius;
+      border-top-left-radius: $radius;
+    }
+
+    &::after {
+      content: "";
+      background-color: rgba($primary-color, 0.9);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: 0.3s ease-out;
+    }
+  }
+
+  &__learn-more {
+    position: absolute;
+    top: $ic-200;
+    left: $ic-200;
+    overflow: hidden;
+
+    span {
+      color: $white;
+      transform: translateY(-105%);
+      transition: 0.3s ease-out;
+    }
+
+    .icon-wrapper {
+      margin-left: 0.5rem;
+      background-color: $secondary-color;
+      padding: 0 0.5rem;
+      display: grid;
+      place-items: center;
+      border-radius: $radius;
+
+      svg {
+        fill: $white;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+
+  &__title {
+    padding: $ic-200 $ic-200 0 $ic-200;
+  }
+
+  &__body {
+    font-size: $ic-100;
+    padding: $ic-200;
+  }
+
+  &:hover,
+  &:focus {
+    .service-card__image-wrapper img {
+      transform: scale(1.1);
+    }
+
+    .service-card__image-wrapper::after {
+      opacity: 1;
+    }
+
+    .service-card__learn-more span {
+      transform: translateY(0%);
+    }
+  }
+}
+
+.service-card--no-link {
+  border-bottom: 2px solid $secondary-color;
+
+  .service-card__image-wrapper {
+    &::after {
+      display: none;
+    }
+  }
+
+  .service-card__learn-more {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    .service-card__image-wrapper img {
+      transform: scale(1);
+    }
+  }
+}

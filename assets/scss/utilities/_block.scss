@@ -1,0 +1,5 @@
+// Adds consitent space and padding for each full panel section
+.block {
+  padding: 5% 0;
+  padding: clamp($ic-600, 5%, $ic-1000) 0;
+}

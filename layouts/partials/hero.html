@@ -1,0 +1,14 @@
+{{ $heroClass := lower .Page.Title }}
+<div class="hero {{ anchorize $heroClass }}-hero">
+  {{ partial "hero-image" . }}
+  <div class="hero__overlay flex flex-justify-center flex-end">
+    <div class="wrapper-lg">
+      <div class="hero__content text-center">
+        <h1 class="text-primary no-margin max-width-none shift-up letter-sp-1">{{ .Params.hero.heading | markdownify }}</h1>
+        {{ if .Params.hero.subheading }}
+        <h2 class="h4 text-white fw-5 max-width-none">{{ .Params.hero.subheading | markdownify }}</h2>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

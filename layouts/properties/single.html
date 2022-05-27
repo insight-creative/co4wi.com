@@ -1,0 +1,170 @@
+{{ define "main" }}
+{{ partial "hero" . }}
+{{ partial "breadcrumbs" . }}
+{{ partial "intro" . }}
+{{ if eq .Title "Properties" }}
+<section class="properties-block pb-9">
+    <div class="wrapper-lg">
+        <div class="grid-3">
+            {{ range .Pages }}
+            <a href="{{ .Permalink }}" class="service-card fade-staggered">
+                <div class="service-card__image-wrapper">
+                    {{ partial "responsive-image" (dict "Page" . "image" .Params.hero.image "alt" .Params.hero.image_alt ) }}
+                </div>
+                <h3 class="service-card__title h4 no-margin">{{ .Title | markdownify }}</h3>
+                <p class="service-card__body">{{ .Params.intro.heading | markdownify }}</p>
+                <div class="service-card__learn-more"><span class="flex">Learn More <span class="icon-wrapper">{{ partialCached "svg-icons/plus.svg" . }}</span></span></div>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ with .Params.what_is_co4 }}
+<section class="block bg-primary">
+    <div class="wrapper text-white flow">
+        <h2 class="fade-up">
+            {{ .heading | markdownify }}
+            {{ if .subheading }}
+            <span class="divider"></span>
+            {{ end }}
+        </h2>
+        {{ if .subheading }}
+        <h3 class="fw-4 h5 fade-up">{{ .subheading | markdownify }}</h3>
+        {{ end }}
+        {{ if .body }}
+        <p class="fade-up">{{ .body | markdownify }}</p>
+        {{ end }}
+    </div>
+</section>
+<section class="co4-features-block block">
+    {{ range .features }}
+        <div class="features-row row">
+            <div class="features-row__image image-column w-100 w-60-m">
+                {{ partial "responsive-image" (dict "Page" . "image" .image "alt" .image_alt ) }}
+            </div>
+            <div class="text-column block w-100 w-40-m bg-gray">
+                <div class="features-row__inner-content bg-primary text-white flow">
+                    <h3>{{ .heading | markdownify }}</h3>
+                    <p>{{ .body | markdownify }}</p>
+                    {{ if .button.button_active }}
+                    <a href="{{ .button.button_url }}" class="btn btn-secondary">{{ .button.button_text }} {{ partial "svg-icons/arrow-right.svg" . }}</a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    {{ end }}
+</section>
+<section class="block bg-gray">
+    <div class="wrapper-lg flow">
+        {{ with .co4_amenities }}
+        <h3 class="text-center text-primary max-width-none no-margin fade-up">
+            {{ .heading }}
+            {{ if .subheading }}
+            <span class="divider--center"></span>
+            {{ end }}
+        </h3>
+        {{ if .subheading }}
+        <h3 class="text-center max-width-none fw-4 h5 fade-up">{{ .subheading | markdownify }}</h3>
+        {{ end }}
+        {{ if .body }}
+        <p class="text-center fade-up max-width-none">{{ .body | markdownify }}</p>
+        {{ end }}
+        {{ end }}
+        <ul class="amenities-grid max-width-none">
+            {{ range .amenities }}
+            <li class="amenities-card fade-up">
+                <span class="amenities-card__icon">
+                    <i class="fas {{ .icon }}"></i>
+                </span>
+                <p class="fw-7">{{ .body }}</p>
+            </li>
+        {{ end }}
+        </ul>
+        <div class="pt-9">
+            <div class="wrapper fade-up">
+                <p>{{ .footer | markdownify }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ with .Params.storage }}
+<section class="heading-block block bg-primary">
+    <div class="wrapper text-white flow">
+        <h2 class="fade-up">
+            {{ .heading | markdownify }}
+        </h2>
+    </div>
+</section>
+<div class="storage-spaces block">
+    <div class="features-row row">
+        <div class="features-row__image image-column w-100 w-60-m">
+            {{ partial "responsive-image" (dict "Page" . "image" .image "alt" .image_alt ) }}
+        </div>
+        <div class="text-column block w-100 w-40-m bg-gray">
+            <div class="features-row__inner-content bg-primary text-white flow fade-up">
+                {{ if .subheading }}
+                <h3 class="fw-4 h5">{{ .subheading | markdownify }}</h3>
+                {{ end }}
+                <p>{{ .body | markdownify }}</p>
+                {{ if .button }}
+                <a href="/contact/" class="btn btn-secondary">Reserve Your Space{{ partial "svg-icons/arrow-right.svg" . }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ with .Params.floorplans }}
+<div class="block">
+    <div class="wrapper">
+        <div class="swiper image-swiper">
+            <div class="swiper-wrapper">
+                {{ range .images }}
+                <div class="swiper-slide cover-image w-100 w-50-m">
+                    <picture>
+                        <source sizes="100vw" srcset="https://ecpwi.imgix.net{{ .image }}?fm=avif&q=85&height=300&width=400&fit=crop 400w, https://ecpwi.imgix.net{{ .image }}?fm=avif&q=85&height=400&width=600&fit=crop 600w, https://ecpwi.imgix.net{{ .image }}?fm=avif&q=85&height=600&width=800&fit=crop 800w, https://ecpwi.imgix.net{{ .image }}?fm=avif&q=85&height=800&width=1200&fit=crop 1200w" type="image/avif">
+                    
+                        <source sizes="100vw" srcset="https://ecpwi.imgix.net{{ .image }}?fm=webp&q=85&height=300&width=400&fit=crop 400w, https://ecpwi.imgix.net{{ .image }}?fm=webp&q=85&height=400&width=600&fit=crop 600w, https://ecpwi.imgix.net{{ .image }}?fm=webp&q=85&height=600&width=800&fit=crop 800w, https://ecpwi.imgix.net{{ .image }}?fm=webp&q=85&height=800&width=1200&fit=crop 1200w" type="image/webp">
+                    
+                        <source sizes="100vw" srcset="https://ecpwi.imgix.net{{ .image }}?q=85&height=300&width=400&fit=crop 400w, https://ecpwi.imgix.net{{ .image }}?q=85&height=400&width=600&fit=crop 600w, https://ecpwi.imgix.net{{ .image }}?q=85&height=600&width=800&fit=crop 800w, https://ecpwi.imgix.net{{ .image }}?q=85&height=800&width=1200&fit=crop 1200w" type="image/jpg">
+                        <img loading="lazy"
+                            src="https://ecpwi.imgix.net{{ .image }}" width="800" height="600" alt="{{ .image_alt }}">
+                    </picture>
+                </div>
+                {{ end }}
+            </div>
+            <div class="swiper-button-container flex">
+                <div class="swiper-button-prev">{{ partialCached "svg-icons/chevron-left.svg" . }}</div>
+                <div class="swiper-button-next">{{ partialCached "svg-icons/chevron-right.svg" . }}</div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div class="block">
+    <div class="wrapper flow">
+        {{ if .heading }}
+        <h2 class="fade-up">
+            {{ .heading | markdownify }}
+            {{ if .subheading }}
+            <span class="divider"></span>
+            {{ end }}
+        </h2>
+        {{ end }}
+        {{ if .subheading }}
+        <h3 class="fw-4 h5 fade-up">{{ .subheading | markdownify }}</h3>
+        {{ end }}
+        {{ if .body }}
+        <p class="fade-up">{{ .body | markdownify }}</p>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+{{ if eq .Title "CO4 Workspace" }}
+{{ partialCached "CO4-cta" . }}
+{{ else }}
+{{ partial "site-cta" . }}
+{{ end }}
+{{ end }}

@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="block">
+    <div class="wrapper flow">
+        <h1 class="text-primary">{{ .Title }}</h1>
+        {{ .Content  }}
+    </div>
+</div>
+{{ partial "site-cta" . }}
+{{ end }}

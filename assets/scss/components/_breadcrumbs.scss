@@ -1,0 +1,51 @@
+.breadcrumbs {
+  position: relative;
+  z-index: 3;
+  color: $primary-color;
+
+  svg {
+    position: relative;
+    top: -2px;
+    stroke: $primary-color;
+    width: $ic-100;
+    height: $ic-100;
+  }
+
+  &__nav {
+    padding: $ic-100 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  &__list-item {
+    list-style-type: none;
+    position: relative;
+    font-size: $ic--100;
+    max-width: none;
+    margin: 0;
+
+    &::after {
+      position: absolute;
+      content: "/";
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-size: 12px;
+      padding: 0 $ic--100;
+    }
+  }
+
+  .active {
+    &::after {
+      position: absolute;
+      content: "";
+    }
+
+    a {
+      color: rgba($primary-color, 0.7);
+      pointer-events: none;
+    }
+  }
+}

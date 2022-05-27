@@ -1,0 +1,11 @@
+{{ $image := (.Page.Resources.GetMatch (index .image)) }}
+
+<picture>
+    <source sizes="50vw" srcset="https://ecpwi.imgix.net{{ .image }}?fm=avif&q=85&height=150&width=200&fit=crop 200w, https://ecpwi.imgix.net{{ .image }}?fm=avif&q=85&height=300&width=400&fit=crop 400w, https://ecpwi.imgix.net{{ .image }}?fm=avif&q=85&height=400&width=600&fit=crop 600w, https://ecpwi.imgix.net{{ .image }}?fm=avif&q=85&height=600&width=800&fit=crop 800w" type="image/avif">
+
+    <source sizes="50vw" srcset="https://ecpwi.imgix.net{{ .image }}?fm=webp&q=85&height=150&width=200&fit=crop 200w, https://ecpwi.imgix.net{{ .image }}?fm=webp&q=85&height=300&width=400&fit=crop 400w, https://ecpwi.imgix.net{{ .image }}?fm=webp&q=85&height=400&width=600&fit=crop 600w, https://ecpwi.imgix.net{{ .image }}?fm=webp&q=85&height=600&width=800&fit=crop 800w" type="image/webp">
+
+    <source sizes="50vw" srcset="https://ecpwi.imgix.net{{ .image }}?q=85&height=150&width=200&fit=crop 200w, https://ecpwi.imgix.net{{ .image }}?q=85&height=300&width=400&fit=crop 400w, https://ecpwi.imgix.net{{ .image }}?q=85&height=400&width=600&fit=crop 600w, https://ecpwi.imgix.net{{ .image }}?q=85&height=600&width=800&fit=crop 800w" type="image/jpg">
+    <img loading="lazy"
+        src="https://ecpwi.imgix.net{{ .image }}" width="500" height="500" alt="{{ .alt }}">
+</picture>

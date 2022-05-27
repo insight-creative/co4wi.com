@@ -1,0 +1,24 @@
+subscribe:
+  heading: Be the first to know about construction updates, special events and founding member exclusive perks.
+  body:
+services_block:
+  - image: /uploads/property-maintenance-and-snow-plowing.jpg
+    image_alt:
+    heading: Snow Removal and Salting Services
+    body: Ensure the safety of your employees and customers during the winter months.
+    url: /services/electric-city-maintenance/
+  - image: /uploads/electric-city-properties-lawn-care.jpg
+    image_alt:
+    heading: Lawn Care
+    body: Weekly lawn cutting, landscaping and more.
+    url: /services/electric-city-maintenance/
+co4_cta:
+  heading: Make your dream a reality
+  subheading: Contact us to learn about private office space rental options and coworking membership levels.
+  image: /uploads/contact-us-hero-alt-2.jpg
+  image_alt:
+service_cta:
+  heading: Check property maintenance off of your list.
+  subheading: The success of your business, big or small, makes our community better. Let's work together to create the best solution for you.
+  image: /uploads/property-maintenance-and-snow-plowing.jpg
+  image_alt:

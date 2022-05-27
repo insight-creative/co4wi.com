@@ -1,0 +1,23 @@
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-gray {
+  background-color: $light-gray;
+}
+
+.bg-gray-light {
+  background-color: $light-gray-2;
+}
+
+.bg-accent-block {
+  background-color: $light-gray;
+  height: 400px;
+  margin-top: -300px;
+  position: relative;
+  z-index: -1;
+}

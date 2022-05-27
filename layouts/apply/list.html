@@ -1,0 +1,307 @@
+{{ define "main" }}
+{{ partial "hero" . }}
+<div class="block">
+  <div class="contact-form wrapper">
+    <div class="contact-form__wrapper">
+      <form name="job_application" method="post" action="/thank-you/">
+          <div class="visually-hidden">
+            <label for="subject">New form submission from the Electric City Properties job application form</label>
+            <input aria-label="subject" name="subject" value="New form submission from the Electric City Properties job application form" />
+          </div>
+          <h2 class="text-primary no-margin">Applicant Information</h2>
+          <hr>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="First_Name">First Name*</label>
+                <input aria-label="First_Name" name="First_Name" type="text" class="contact-form__form-control" required>
+              </div>
+              <div class="contact-form__form-group">
+                <label for="Last_Name">Last Name*</label>
+                <input aria-label="Last_Name" name="Last_Name" type="text" class="contact-form__form-control" required>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form__form-group">
+              <label for="Email">Email*</label>
+              <input aria-label="Email" name="_replyto" type="email" class="contact-form__form-control" required>
+          </div>
+          <div class="contact-form__form-group">
+              <label for="Phone">Phone*</label>
+              <input aria-label="Phone" name="Phone" type="tel" class="contact-form__form-control" required>
+          </div>
+          <div class="contact-form__form-group">
+              <label for="Address">Address*</label>
+              <input aria-label="Address" name="Address" type="text" class="contact-form__form-control" required>
+          </div>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="City">City*</label>
+                <input aria-label="City" name="City" type="text" class="contact-form__form-control" required>
+              </div>
+              <div class="contact-form__form-group">
+                <label for="State">State*</label>
+                <input aria-label="State" name="State" type="text" class="contact-form__form-control" required>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="Zip">ZIP/Postal Code*</label>
+                <input aria-label="Zip" name="Zip" type="number" class="contact-form__form-control" required>
+              </div>
+              <div class="contact-form__form-group">
+                <label for="Country">Country*</label>
+                <input aria-label="Country" name="Country" type="text" class="contact-form__form-control" required>
+              </div>
+            </div>
+          </div>
+          <fieldset class="contact-form__form-row">
+            <legend class="no-margin">Are you over the age of 18?*</legend>
+            <div class="contact-form__radio-wrapper flex">
+              <p class="contact-form__radio no-margin">
+                <label>
+                  <input type="radio" name="Are_you_over_the_age_of_18" value="Yes, I'm over 18" required> Yes
+                </label>
+              </p>
+              <p class="contact-form__radio no-margin">
+                <label>
+                  <input type="radio" name="Are_you_over_the_age_of_18" value="No, I'm not 18"> No
+                </label>
+              </p>
+            </div>
+          </fieldset>
+          <fieldset class="contact-form__form-row">
+            <legend class="no-margin">Are you a U.S. citizen?*</legend>
+            <div class="contact-form__radio-wrapper flex">
+              <p class="contact-form__radio no-margin">
+                <label>
+                  <input type="radio" name="Are_you_a_US_citizen" value="Yes, I'm a U.S. Citizen" required> Yes
+                </label>
+              </p>
+              <p class="contact-form__radio no-margin">
+                <label>
+                  <input type="radio" name="Are_you_a_US_citizen" value="No, I'm not a U.S. Citizen"> No
+                </label>
+              </p>
+            </div>
+          </fieldset>
+          <fieldset class="contact-form__form-row">
+            <legend class="no-margin">Have you ever been convicted of a felony?*</legend>
+            <div class="contact-form__radio-wrapper flex">
+              <p class="contact-form__radio no-margin">
+                <label>
+                  <input type="radio" name="Have_you_ever_been_convicted_of_a_felony" value="Yes, I've been convicted of a felony" required> Yes
+                </label>
+              </p>
+              <p class="contact-form__radio no-margin">
+                <label>
+                  <input type="radio" name="Have_you_ever_been_convicted_of_a_felony" value="No, I've not been convicted of a felony"> No
+                </label>
+              </p>
+            </div>
+          </fieldset>
+          <div class="block">
+            <h2 class="text-primary no-margin">Education</h2>
+            <hr>
+            <h3 class="text-primary">High School</h3>
+            <div class="contact-form__form-group">
+              <label for="High_School_Name">High School Name</label>
+              <input aria-label="High_School_Name" name="High_School_Name" type="text" class="contact-form__form-control">
+            </div>
+            <div class="contact-form__form-group">
+                <label for="High_School_Address">Address</label>
+                <input aria-label="High_School_Address" name="High_School_Address" type="text" class="contact-form__form-control">
+            </div>
+            <div class="contact-form__form-row">
+              <div class="contact-form__row-wrapper">
+                <div class="contact-form__form-group">
+                  <label for="High_School_City">City</label>
+                  <input aria-label="High_School_City" name="High_School_City" type="text" class="contact-form__form-control">
+                </div>
+                <div class="contact-form__form-group">
+                  <label for="High_School_State">State</label>
+                  <input aria-label="High_School_State" name="High_School_State" type="text" class="contact-form__form-control">
+                </div>
+              </div>
+            </div>
+            <div class="contact-form__form-row">
+              <div class="contact-form__row-wrapper">
+                <div class="contact-form__form-group">
+                  <label for="High_School_Zip">ZIP/Postal Code</label>
+                  <input aria-label="High_School_Zip" name="High_School_Zip" type="number" class="contact-form__form-control">
+                </div>
+                <div class="contact-form__form-group">
+                  <label for="High_School_Country">Country</label>
+                  <input aria-label="High_School_Country" name="High_School_Country" type="text" class="contact-form__form-control">
+                </div>
+              </div>
+            </div>
+            <div class="contact-form__form-row">
+              <div class="contact-form__row-wrapper">
+                <div class="contact-form__form-group">
+                  <label for="High_School_Start_Date">From</label>
+                  <input aria-label="High_School_Start_Date" name="High_School_Start_Date" type="date" class="contact-form__form-control">
+                </div>
+                <div class="contact-form__form-group">
+                  <label for="High_School_End_Date">To</label>
+                  <input aria-label="High_School_End_Date" name="High_School_End_Date" type="date" class="contact-form__form-control">
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h3 class="text-primary">College</h3>
+            <div class="contact-form__form-group">
+              <label for="College_Name">College Name</label>
+              <input aria-label="College_Name" name="College_Name" type="text" class="contact-form__form-control">
+            </div>
+            <div class="contact-form__form-group">
+                <label for="College_Address">Address</label>
+                <input aria-label="College_Address" name="College_Address" type="text" class="contact-form__form-control">
+            </div>
+            <div class="contact-form__form-row">
+              <div class="contact-form__row-wrapper">
+                <div class="contact-form__form-group">
+                  <label for="College_City">City</label>
+                  <input aria-label="College_City" name="College_City" type="text" class="contact-form__form-control">
+                </div>
+                <div class="contact-form__form-group">
+                  <label for="College_State">State</label>
+                  <input aria-label="College_State" name="College_State" type="text" class="contact-form__form-control">
+                </div>
+              </div>
+            </div>
+            <div class="contact-form__form-row">
+              <div class="contact-form__row-wrapper">
+                <div class="contact-form__form-group">
+                  <label for="College_Zip">ZIP/Postal Code</label>
+                  <input aria-label="College_Zip" name="College_Zip" type="number" class="contact-form__form-control">
+                </div>
+                <div class="contact-form__form-group">
+                  <label for="College_Country">Country</label>
+                  <input aria-label="College_Country" name="College_Country" type="text" class="contact-form__form-control">
+                </div>
+              </div>
+            </div>
+            <div class="contact-form__form-row">
+              <div class="contact-form__row-wrapper">
+                <div class="contact-form__form-group">
+                  <label for="College_Start_Date">From</label>
+                  <input aria-label="College_Start_Date" name="College_Start_Date" type="date" class="contact-form__form-control">
+                </div>
+                <div class="contact-form__form-group">
+                  <label for="College_End_Date">To</label>
+                  <input aria-label="College_End_Date" name="College_End_Date" type="date" class="contact-form__form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="text-primary no-margin">Previous Employment</h2>
+          <hr>
+          <h3 class="text-primary">Employer 1</h3>
+          <div class="contact-form__form-group">
+            <label for="Previous_Employer_1">Company</label>
+            <input aria-label="Previous_Employer_1" name="Previous_Employer_1" type="text" class="contact-form__form-control">
+          </div>
+          <div class="contact-form__form-group">
+              <label for="Previous_Employer_1_Address">Address</label>
+              <input aria-label="Previous_Employer_1_Address" name="Previous_Employer_1_Address" type="text" class="contact-form__form-control">
+          </div>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_1_City">City</label>
+                <input aria-label="Previous_Employer_1_City" name="Previous_Employer_1_City" type="text" class="contact-form__form-control">
+              </div>
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_1_State">State</label>
+                <input aria-label="Previous_Employer_1_State" name="Previous_Employer_1_State" type="text" class="contact-form__form-control">
+              </div>
+            </div>
+          </div>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_1_Zip">ZIP/Postal Code</label>
+                <input aria-label="Previous_Employer_1_Zip" name="Previous_Employer_1_Zip" type="number" class="contact-form__form-control">
+              </div>
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_1_Country">Country</label>
+                <input aria-label="Previous_Employer_1_Country" name="Previous_Employer_1_Country" type="text" class="contact-form__form-control">
+              </div>
+            </div>
+          </div>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_1_Start_Date">From</label>
+                <input aria-label="Previous_Employer_1_Start_Date" name="Previous_Employer_1_Start_Date" type="date" class="contact-form__form-control">
+              </div>
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_1_End_Date">To</label>
+                <input aria-label="Previous_Employer_1_End_Date" name="Previous_Employer_1_End_Date" type="date" class="contact-form__form-control">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h3 class="text-primary">Employer 2</h3>
+          <div class="contact-form__form-group">
+            <label for="Previous_Employer_2">Company</label>
+            <input aria-label="Previous_Employer_2" name="Previous_Employer_2" type="text" class="contact-form__form-control">
+          </div>
+          <div class="contact-form__form-group">
+              <label for="Previous_Employer_2_Address">Address</label>
+              <input aria-label="Previous_Employer_2_Address" name="Previous_Employer_2_Address" type="text" class="contact-form__form-control">
+          </div>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_2_City">City</label>
+                <input aria-label="Previous_Employer_2_City" name="Previous_Employer_2_City" type="text" class="contact-form__form-control">
+              </div>
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_2_State">State</label>
+                <input aria-label="Previous_Employer_2_State" name="Previous_Employer_2_State" type="text" class="contact-form__form-control">
+              </div>
+            </div>
+          </div>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_2_Zip">ZIP/Postal Code</label>
+                <input aria-label="Previous_Employer_2_Zip" name="Previous_Employer_2_Zip" type="number" class="contact-form__form-control">
+              </div>
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_2_Country">Country</label>
+                <input aria-label="Previous_Employer_2_Country" name="Previous_Employer_2_Country" type="text" class="contact-form__form-control">
+              </div>
+            </div>
+          </div>
+          <div class="contact-form__form-row">
+            <div class="contact-form__row-wrapper">
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_2_Start_Date">From</label>
+                <input aria-label="Previous_Employer_2_Start_Date" name="Previous_Employer_2_Start_Date" type="date" class="contact-form__form-control">
+              </div>
+              <div class="contact-form__form-group">
+                <label for="Previous_Employer_2_End_Date">To</label>
+                <input aria-label="Previous_Employer_2_End_Date" name="Previous_Employer_2_End_Date" type="date" class="contact-form__form-control">
+              </div>
+            </div>
+          </div>
+          <div class="contact-form__form-group">
+              <label for="Special_Skills">Describe any special skills or qualifications you possess for this line of work</label>
+              <textarea aria-label="Special_Skills" name="Special_Skills" class="contact-form__form-control" rows="4"></textarea>
+          </div>
+          <input type="hidden" name="inbox_key" value="ecp-website-notifications">
+          <!-- <input type="text" name="_gotcha" style="display: none;"> -->
+          <!-- <div class="h-captcha" data-sitekey="1e9bb55c-d77b-4e97-8b6c-7357bd21dd64"></div> -->
+          <button target="_blank" type="submit" class="contact-form__btn btn btn-primary">Send Application</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{ end }}
