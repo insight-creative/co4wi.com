@@ -8,20 +8,6 @@
         <h2 class="text-primary h3 max-width-none">{{ .Site.Data.global_partials.subscribe.heading }}</h2>
         <p>{{ .Site.Data.global_partials.subscribe.body }}</p>
         <div class="subscribe">
-          <form method="post" name="email_signup">
-            <div class="visually-hidden">
-              <label for="subject">New form submission from the ecpwi.com email signup form</label>
-              <input aria-label="subject" name="subject" value="New form submission from the ecpwi.com email signup form" />
-            </div>
-            <div class="contact-form__form-row">
-              <div class="contact-form__form-group flex flex-column">
-                  <label for="email">Email*</label>
-                  <input name="_replyto" id="email" type="email" class="contact-form__form-control" placeholder="Email Address" required>
-              </div>
-            </div>
-            <input type="hidden" name="inbox_key" value="ecp-website-notifications">
-            <button type="submit" class="contact-form__btn btn btn-secondary">Sign me up {{ partial "svg-icons/arrow-right.svg" . }}</button>
-          </form>
         </div>
       </div>
     </div>
